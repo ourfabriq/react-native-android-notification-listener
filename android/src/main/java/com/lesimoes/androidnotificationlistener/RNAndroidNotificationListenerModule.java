@@ -56,12 +56,4 @@ public class RNAndroidNotificationListenerModule extends ReactContextBaseJavaMod
         i.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
         reactContext.startActivity(i);
     }
-
-    public static void sendEvent(String event, WritableMap params) {
-        if (reactContext == null) return;
-
-        reactContext
-                .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
-                .emit(event, params);
-    }
 }
